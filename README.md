@@ -2,10 +2,11 @@
 
 ## users table
 
-| Column | Type   | Options                                  |
-|:------:|:------:|:----------------------------------------:|
-| name   | string | null: false, unique: true, index: true   |
-| image  | string |                                          |
+| Column       | Type   | Options                                  |
+|:------------:|:------:|:----------------------------------------:|
+| name         | string | null: false, unique: true, index: true   |
+| image        | string |                                          |
+| introduction | text   |                                          |
 
 ### Association
  * has_many :projects, through::project_users
