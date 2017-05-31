@@ -1,24 +1,59 @@
-# README
+# DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users table
 
-Things you may want to cover:
+| Column       | Type   | Options                                  |
+|:------------:|:------:|:----------------------------------------:|
+| name         | string | null: false, unique: true, index: true   |
+| image        | string |                                          |
+| introduction | text   |                                          |
 
-* Ruby version
+### Association
+ * has_many :project_users
+ * has_many :projects, through::project_users
+ * has_many :likes
 
-* System dependencies
 
-* Configuration
+## projects table
 
-* Database creation
+| Column      | Type       | Options     |
+|:-----------:|:----------:|:-----------:|
+| title       | text       | null: false |
+| description | text       | null: false |
+| image       | string     | null: false |
+| price       | integer    |             |
+| place       | string     |             |
+| start_at    | integer    |             |
+| end_at      | integer    |             |
+| detail      | text       |             |
+| user_id     | references | foreign_key: true |
+| status      | integer    | null: false, draft: 0, published: 1, accepting: 2, deleted: 3 |
 
-* Database initialization
 
-* How to run the test suite
+### Association
+ * has_many :project_users
+ * has_many :users through::project_users
+ * has_many :likes
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## project_users table
 
-* ...
+| Column     | Type       | Options           |
+|:----------:|:----------:|:-----------------:|
+| project_id | references | foreign_key: true |
+| user_id    | references | foreign_key: true |
+
+### Association
+ * belongs_to :user
+ * belongs_to :project
+
+## likes table
+
+| Column     | Type       | Options           |
+|:----------:|:----------:|:-----------------:|
+| project_id | references | foreign_key: true |
+| user_id    | references | foreign_key: true |
+
+### Association
+ * belongs_to :user
+ * belongs_to :project
