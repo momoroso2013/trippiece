@@ -27,7 +27,7 @@
 | end_at      | integer    |             |
 | detail      | text       |             |
 | user_id     | references | foreign_key: true |
-| status      | integer    | null: false, draft: 0, published: 1, accepting: 2 |
+| status      | integer    | null: false, draft: 0, published: 1, accepting: 2, deleted: 3 |
 
 
 ### Association
