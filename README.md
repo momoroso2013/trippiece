@@ -9,9 +9,9 @@
 | introduction | text   |                                          |
 
 ### Association
- * has_many :projects, through::project_users
  * has_many :project_users
-
+ * has_many :projects, through::project_users
+ * has_many :likes
 
 
 ## projects table
@@ -27,14 +27,27 @@
 | end_at      | integer    |             |
 | detail      | text       |             |
 | user_id     | references | foreign_key: true |
+| status      | integer    | null: false, draft: 0, published: 1, accepting: 2 |
 
 
 ### Association
- * has_many :users through::project_users
  * has_many :project_users
+ * has_many :users through::project_users
+ * has_many :likes
 
 
 ## project_users table
+
+| Column     | Type       | Options           |
+|:----------:|:----------:|:-----------------:|
+| project_id | references | foreign_key: true |
+| user_id    | references | foreign_key: true |
+
+### Association
+ * belongs_to :user
+ * belongs_to :project
+
+## likes table
 
 | Column     | Type       | Options           |
 |:----------:|:----------:|:-----------------:|
