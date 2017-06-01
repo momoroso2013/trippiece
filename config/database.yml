@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: trippiece_production
-  username: trippiece
+  username: root
   password: <%= ENV['TRIPPIECE_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
