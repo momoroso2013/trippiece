@@ -12,6 +12,8 @@ module Trippiece
       g.javascripts false
       g.helper false
       g.test_framework false
+
+      config.assets.compile = true
     end
   end
 end
