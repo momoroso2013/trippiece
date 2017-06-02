@@ -1,0 +1,47 @@
+.content {
+  background-color: red;
+  &__main-content {
+    background-image: url(https://trippiece-dev.s3.amazonaws.com/static/img/pc/img_index_main_bg2.97888433.jpg);
+    background-size: cover;
+    height: 1000px;
+    width: 100vw;
+    &__logo {
+    background-image: url(https://trippiece-dev.s3.amazonaws.com/static/img/pc/logo_big.514ceeae.png);
+    background-size: 200px, 57px;
+    height: 56px;
+    width: 200px;
+      }
+    &__title {
+      font-size: 80px;
+      color: white;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: 10px;
+      line-height: 1.1em;
+      }
+    &__sub-title {
+      height: 400px;
+      font-size: 20px;
+      color: white;
+      text-align: center;
+      font-weight: 800;
+      letter-spacing: 1px;
+      line-height: 1.1em;
+      margin-top: 20px;
+      }
+    &__login {
+      background-color: black;
+      opacity: 0.5;
+      height: 250px;
+      width: 600px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      color: white;
+      }
+    }
+  }
+
+.footer {
+  background-color: gray;
+}
