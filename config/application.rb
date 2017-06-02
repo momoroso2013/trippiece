@@ -14,6 +14,7 @@ module Trippiece
       g.test_framework false
 
       config.assets.compile = true
+      config.serve_static_files = true
     end
   end
 end
