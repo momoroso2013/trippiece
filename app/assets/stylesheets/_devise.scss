@@ -1,0 +1,38 @@
+@mixin login-template (){
+  color: white;
+  text-align: center;
+  margin: 10px;
+  }
+
+.content-login {
+  background-image: url(https://trippiece-dev.s3.amazonaws.com/static/img/pc/img_index_main_bg2.97888433.jpg);
+  background-size: cover;
+  height: 1000px;
+  width: 100vw;
+  padding: 60px;
+  .registrations {
+    background: rgba(45,45,45, 0.5);
+    height: 600px;
+    width: 600px;
+    margin: auto;
+    padding-top: 30px;
+    h2 {
+      text-align: center;
+      font-size: 40px;
+      color: white;
+    }
+    .field {
+      @include login-template ();
+    }
+    .actions {
+      @include login-template ();
+    }
+   .already-registrated {
+      @include login-template ();
+      font-size: 25px;
+      margin-top: 10px;
+    }
+  }
+}
+
+
