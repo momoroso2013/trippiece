@@ -1,12 +1,65 @@
-.content
-  .content__main-content
-    .content__main-content__logo
-    .content__main-content__title
-      みんなで遊べば、<br />地球は楽しい。
-    .content__main-content__sub-title どこにもない旅を、みんなでつくる。<br />trippiece <トリッピース>
-    .content__main-content__login
-      .content__main-content__login--facebook Facebookで新規登録/ログイン
-      .content__main-content__login--email メールアドレスで新規登録
-      .content__main-content__login--google google+ で新規登録/ログイン
-  .content__topics-content 説明と、おすすめとか
-.footer その他のこと
+- if user_signed_in?
+  .header
+    .header__var
+      .header__var__logo
+      .header__var__travel-search 企画の検索
+      .header__var__nav
+        .header__var__nav__mylist リスト
+        .header__var__nav__message メッセージ
+        .header__var__nav__notification 通知
+        .header__var__nav__user ユーザー
+      .header__var__create-project 企画作成
+
+  .contents
+    .contents__pickup
+      .contents__pickup__slide
+        .contents__pickup__slide__text 海外旅行特集
+      .contents__pickup__sub
+        %ul
+          %li ハワイ
+          %li ドイツ
+          %li オーストラリア
+          %li インド
+    .contents__main
+      .contents__main__tab
+        .contents__main__tab__all 総合
+        .contents__main__tab__date 日程
+      .contents__main__sort
+        .contents__main__sort__recommend オススメ順
+        .contents__main__sort__project-status 受付状態別
+      .contents__main__projects
+        .contents__main__projects__trip
+          .contents__main__projects__trip__top
+            .contents__main__projects__trip__top__image
+              .contents__main__projects__trip__top__status 申込受付前
+          .contents__main__projects__trip__bottom
+            .contents__main__projects__trip__bottom__user-image
+            .contents__main__projects__trip__bottom__project-name みんなで旅行に行こう、アメリカへ。持ち物は手ぶらです。
+            .contents__main__projects__trip__bottom__project-date 12月１日〜２５日まで
+            .contents__main__projects__trip__bottom__project-member ５人
+            .contents__main__projects__trip__bottom__project-status-color
+        .contents__main__projects__trip
+          .contents__main__projects__trip__top
+            .contents__main__projects__trip__top__image
+              .contents__main__projects__trip__top__status 申込受付前
+          .contents__main__projects__trip__bottom
+            .contents__main__projects__trip__bottom__user-image
+            .contents__main__projects__trip__bottom__project-name みんなで旅行に行こう、アメリカへ。持ち物は手ぶらです。
+            .contents__main__projects__trip__bottom__project-date 12月１日〜２５日まで
+            .contents__main__projects__trip__bottom__project-member ５人
+            .contents__main__projects__trip__bottom__project-status-color
+        .contents__main__projects__trip
+          .contents__main__projects__trip__top
+            .contents__main__projects__trip__top__image
+              .contents__main__projects__trip__top__status 申込受付前
+          .contents__main__projects__trip__bottom
+            .contents__main__projects__trip__bottom__user-image
+            .contents__main__projects__trip__bottom__project-name みんなで旅行に行こう、アメリカへ。持ち物は手ぶらです。
+            .contents__main__projects__trip__bottom__project-date 12月１日〜２５日まで
+            .contents__main__projects__trip__bottom__project-member ５人
+            .contents__main__projects__trip__bottom__project-status-color
+
+  .footer ふったー
+- else
+  = render partial: "contents-not-sign-in"
+
