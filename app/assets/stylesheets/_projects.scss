@@ -8,60 +8,204 @@
   opacity: 0.9;
   }
 
+@mixin header-template() {
+  float: left;
+  margin-left: 20px;
+  margin-top: 10px;
+}
 
-.content {
-  background-color: red;
-  &__main-content {
-    background-image: url(https://trippiece-dev.s3.amazonaws.com/static/img/pc/img_index_main_bg2.97888433.jpg);
-    background-size: cover;
-    height: 1000px;
-    width: 100vw;
+$default-side-space: 0 200px;
+$default-border: 1px solid #A4A4A4;
+$main-back-ground: #FBEFF2;
+$sub-back-ground: white;
+$main-font-color: #424242;
+$sub-font-color: #BDBDBD;
+
+.header {
+  background-color: #F3E2A9;
+  height: 60px;
+  width: 100%;
+  color: blue;
+  &__var {
     &__logo {
-      background-image: url(https://trippiece-dev.s3.amazonaws.com/static/img/pc/logo_big.514ceeae.png);
-      background-size: 200px, 57px;
-      height: 56px;
+      margin-left: 40px;
+      height: 55px;
       width: 200px;
+      background-image: url(https://trippiece-dev.s3.amazonaws.com/static/img/pc/logo_big.514ceeae.png);
+      background-size: 200px;
+      float: left;
+    }
+    &__travel-search {
+      @include header-template();
+    }
+    &__nav {
+      @include header-template();
+      &__mylist{
+      @include header-template();
+      margin-top: 0px;
+
       }
-    &__title {
-      font-size: 80px;
-      color: white;
-      text-align: center;
-      font-weight: 700;
-      letter-spacing: 10px;
-      line-height: 1.1em;
+      &__message {
+      @include header-template();
+      margin-top: 0px;
       }
-    &__sub-title {
-      height: 400px;
-      font-size: 20px;
-      color: white;
-      text-align: center;
-      font-weight: 800;
-      letter-spacing: 1px;
-      line-height: 1.1em;
-      margin-top: 20px;
+      &__notification {
+      @include header-template();
+      margin-top: 0px;
       }
-    &__login {
-      background: rgba(45,45,45, 0.5);
-      height: 250px;
-      width: 600px;
-      margin: auto;
-      padding-top: 30px;
-      &--facebook {
-        @include devise-template ();
-        background-color: #0101DF;
+      &__user {
+      @include header-template();
+      margin-top: 0px;
+      }
+    }
+    &__create-project {
+      @include header-template();
+    }
+  }
+}
+
+.contents {
+  &__pickup {
+
+    &__slide {
+      background-image: url(https://s3-ap-northeast-1.amazonaws.com/trippiece/feature/international/banner_l.jpg);
+      color: #8181F7;
+      height: 450px;
+      width: 100vw;
+      &__text {
+        font-size: 40px;
+      padding: $default-side-space;
+      }
+    }
+    &__sub {
+      padding: 0 40px;
+      background-color: #CEF6D8;
+      height: 70px;
+      padding: $default-side-space;
+      border-bottom: $default-border;
+
+      ul {
+        color: blue;
+        font-size: 30px;
+        font-weight: bold;
+        li {
+          float: left;
+          padding-right: 40px;
         }
-      &--email {
-        @include devise-template ();
-        background-color: #FE9A2E;
-        }
-      &--google {
-        @include devise-template ();
-        background-color: #FF4000;
-      }
       }
     }
   }
+  &__main {
+    background-color: $main-back-ground;
+    // clear: both;
+    &__tab {
+      background-color: $main-back-ground;
+      height: 75px;
+      border-bottom: $default-border;
+      margin: $default-side-space;
+      padding-top: 20px;
+      &__all {
+        color: $main-font-color;
+        float: left;
+        height: 55px;
+        font-size: 30px;
+        font-weight: 100;
+        padding-right: 20px;
+        border-bottom: 2px solid #FA8258;
+      }
+      &__date {
+        color: $sub-font-color;
+        float: left;
+        font-size: 30px;
+        padding-left: 20px;
+      }
+    }
+    &__sort {
+      background-color: $main-back-ground;
+      margin: $default-side-space;
+      height: 70px;
+      padding-top: 10px;
+      &__recommend {
+        background-color: $sub-back-ground;
+        font-weight: bold;
+        height: 50px;
+        float: right;
+        border: $default-border;
+        padding: 15px;
+        color: $main-font-color;
+      }
+      &__project-status {
+        background-color: $sub-back-ground;
+        font-weight: bold;
+        height: 50px;
+        float: right;
+        border: $default-border;
+        padding: 15px;
+        color: $main-font-color;
+
+
+      }
+    }
+    &__projects {
+      background-color: $main-back-ground;
+      height: 600px;
+      padding: $default-side-space;
+
+      &__trip {
+        height: 300px;
+        width: 340px;
+        border: $default-border;
+        float: left;
+        margin: 0 10px;
+
+        &__top {
+          height: 190px;
+          &__image {
+            background-image: url(https://trippiece.s3.amazonaws.com/file/2017/6/3/447c6a49-004d-49c6-9eab-7400b1b4766c_l.jpg);
+            height: 190px;
+          }
+          &__status {
+            height: 30px;
+            width: 28%;
+            color: white;
+            background: rgba(45,45,45, 0.5);
+            float:right;
+            margin: 9px;
+            text-align: center;
+          }
+        }
+        &__bottom {
+          background-color: $sub-back-ground;
+          height: calc(300px - 190px);
+          border: $default-border;
+          &__user-image {
+            height: 70px;
+            width: 70px;
+            background-color: black;
+            float: left;
+          }
+          &__project-name {
+            color: red;
+            color: $main-font-color;
+          }
+          &__project-date {
+            color: $sub-font-color;
+          }
+          &__project-member {
+            float: right;
+            color: $sub-font-color;
+
+          }
+          &__project-status-color {
+
+          }
+        }
+      }
+    }
+  }
+}
 
 .footer {
+  width: 100%;
   background-color: gray;
 }
