@@ -1,0 +1,13 @@
+= render partial: "header"
+
+.contents
+  .contents__new
+    .contents__new__create
+      %h1 企画を作成する。
+      .contents__new__create__form
+        / = form_for @projects do |f|
+        /   = f.text_field :text, class: "type-message", placeholder: "Type a message"
+        /   = f.label :image do
+        /     = f.file_field :image, class: "type-message--image", style: "display:none;"
+        /     %i.fa.fa-file-picture-o
+        /     = f.submit "Send", class: "type-message--send"
