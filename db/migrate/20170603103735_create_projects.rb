@@ -6,8 +6,8 @@ class CreateProjects < ActiveRecord::Migration[5.0]
       t.string :image
       t.string :place
       t.integer :price
-      t.integer :start_at
-      t.integer :end_at
+      t.date :start_at
+      t.date :end_at
       t.text :detail
       t.references :user,       foreign_key: true
       t.integer :status,        null: false, draft: 0, published: 1, accepting: 2, deleted: 3
