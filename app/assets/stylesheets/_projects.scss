@@ -206,6 +206,27 @@ $sub-font-color: #BDBDBD;
 }
 
 .footer {
-  width: 100%;
-  background-color: gray;
+  width: 100vw;
+  background-color: $main-back-ground;
+  padding: $default-side-space;
+
+  &__footer {
+  padding-top: 30px;
+  height: 300px;
+  border-top: $default-border;
+  }
+
+  tr {
+    th {
+    text-align: center;
+    font-weight: bold;
+    color: $main-font-color;
+    }
+
+    td {
+    text-align: center;
+    padding: 10px 40px;
+    color: $sub-font-color;
+    }
+  }
 }

@@ -1,19 +1,63 @@
+$form-width: 350px;
+
+
 .contents {
   &__new {
     background-color: $main-back-ground;
     padding: $default-side-space;
-    height: 1200px;
+    height: 1500px;
     padding-top: 60px;
+
     &__create {
-      height: 800px;
+      height: 1300px;
       background-color: $sub-back-ground;
       border: $default-border;
-      padding-top: 80px;
+      padding: 80px 70px;
+
       h1 {
-      margin-top: 30px;
+      margin: 30px 0;
       font-size: 40px;
       text-align: center;
       color: $main-font-color;
+      }
+
+      &__form__field {
+          text-align: center;
+
+        &--left {
+          margin-bottom: 20px;
+
+          #project_title {
+            height: 50px;
+            width: $form-width;
+          }
+
+          #project_description {
+            height: 100px;
+            width: $form-width;
+          }
+
+          #project_place {
+            height: 40px;
+            width: $form-width;
+          }
+
+          #project_price {
+            height: 40px;
+            width: 100px;
+          }
+
+          #project_detail {
+            height: 350px;
+            width: $form-width;
+          }
+        }
+        &--right {
+          font-weight: bold;
+          color: $main-font-color;
+        }
+        &--submit {
+        }
       }
     }
   }
