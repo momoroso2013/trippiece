@@ -20,38 +20,10 @@
         .contents__main__sort__recommend オススメ順
         .contents__main__sort__project-status 受付状態別
       .contents__main__projects
-        .contents__main__projects__trip
-          .contents__main__projects__trip__top
-            .contents__main__projects__trip__top__image
-              .contents__main__projects__trip__top__status 申込受付前
-          .contents__main__projects__trip__bottom
-            .contents__main__projects__trip__bottom__user-image
-            .contents__main__projects__trip__bottom__project-name みんなで旅行に行こう、アメリカへ。持ち物は手ぶらです。
-            .contents__main__projects__trip__bottom__project-date 12月１日〜２５日まで
-            .contents__main__projects__trip__bottom__project-member ５人
-            .contents__main__projects__trip__bottom__project-status-color
-        .contents__main__projects__trip
-          .contents__main__projects__trip__top
-            .contents__main__projects__trip__top__image
-              .contents__main__projects__trip__top__status 申込受付前
-          .contents__main__projects__trip__bottom
-            .contents__main__projects__trip__bottom__user-image
-            .contents__main__projects__trip__bottom__project-name みんなで旅行に行こう、アメリカへ。持ち物は手ぶらです。
-            .contents__main__projects__trip__bottom__project-date 12月１日〜２５日まで
-            .contents__main__projects__trip__bottom__project-member ５人
-            .contents__main__projects__trip__bottom__project-status-color
-        .contents__main__projects__trip
-          .contents__main__projects__trip__top
-            .contents__main__projects__trip__top__image
-              .contents__main__projects__trip__top__status 申込受付前
-          .contents__main__projects__trip__bottom
-            .contents__main__projects__trip__bottom__user-image
-            .contents__main__projects__trip__bottom__project-name みんなで旅行に行こう、アメリカへ。持ち物は手ぶらです。
-            .contents__main__projects__trip__bottom__project-date 12月１日〜２５日まで
-            .contents__main__projects__trip__bottom__project-member ５人
-            .contents__main__projects__trip__bottom__project-status-color
+        = render partial: "trip", collection: @projects, as: "project"
 
-  .footer ふったー
+  = render partial: "footer"
+
 - else
   = render partial: "contents-not-sign-in"
 
