@@ -1,9 +1,9 @@
 
 .contents {
-  background-color: $main-back-ground;
-  padding: $default-side-space;
 
   &__show {
+    background-color: $main-back-ground;
+    padding: $default-side-space;
     padding-bottom: 40px;
 
     &__title {
