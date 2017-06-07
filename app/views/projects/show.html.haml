@@ -1,0 +1,46 @@
+= render partial: "header"
+
+.contents
+  .contents__show
+    .contents__show__title
+      = @project.title
+    .contents__show__title--status
+    .contents__show__tab
+      .contents__show__tab--detail 企画詳細
+      .contents__show__tab--message 企画者メッセージ
+    .contents__show__top
+      .contents__show__top__image
+      - if @project.image?
+        = image_tag @project.image.url, class: "image"
+      .contents__show__top__user
+        .contents__show__top__user--icon アイコン
+        .contents__show__top__user--name 名前
+        .contents__show__top__user--like
+        .contents__show__top__user--member 0人
+      .contents__show__top__description
+        = @project.description
+    .contents__show__bottom
+      .contents__show__bottom__left
+        日程
+        .contents__show__bottom__left__date
+          = @project.start_at
+          から
+          %br
+          = @project.end_at
+          まで
+      .contents__show__bottom__center
+        旅行代金
+        .contents__show__bottom__center__price
+          およそ
+          %br
+          = @project.price
+          円前後
+      .contents__show__bottom__right
+        場所
+        .contents__show__bottom__right__place
+          = @project.place
+      .contents__show__bottom__detail
+        %br
+        = @project.detail
+
+= render partial: "footer"
