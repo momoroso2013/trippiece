@@ -5,9 +5,44 @@
     .contents__new__create
       %h1 企画を作成する。
       .contents__new__create__form
-        / = form_for @projects do |f|
-        /   = f.text_field :text, class: "type-message", placeholder: "Type a message"
-        /   = f.label :image do
-        /     = f.file_field :image, class: "type-message--image", style: "display:none;"
-        /     %i.fa.fa-file-picture-o
-        /     = f.submit "Send", class: "type-message--send"
+        = form_for @project, html: { multipart: true } do |f|
+          .contents__new__create__form__field
+            .contents__new__create__form__field--right
+              = f.label      :title,        "タイトル", class: "title"
+            .contents__new__create__form__field--left
+              = f.text_field :title, placeholder: "ワクワクするようなタイトルをつけましょう"
+            .contents__new__create__form__field--right
+              = f.label      :image,        "企画の画像", class: "image"
+            .contents__new__create__form__field--right
+              = f.file_field :image
+            .contents__new__create__form__field--left
+            .contents__new__create__form__field--right
+              = f.label      :description,  "旅への想い", class: "description"
+            .contents__new__create__form__field--left
+              = f.text_area  :description, placeholder: "計画した想いを書きましょう\n例)５年前、私はドイツに留学していました。当時の楽しい思い出を皆さんにも提供したいと思い、今回計画しました！"
+            .contents__new__create__form__field--right
+              = f.label      :start_at,     "開始予定日", class: "start_at"
+            .contents__new__create__form__field--left
+              = f.date_select :start_at, use_month_numbers: true, date_separator: "/"
+            .contents__new__create__form__field--right
+              = f.label      :end_at,       "終了予定日", class: "end_at"
+            .contents__new__create__form__field--left
+              = f.date_select :end_at, use_month_numbers: true, date_separator: "/"
+            .contents__new__create__form__field--right
+              = f.label      :place,        "行き先", class: "place"
+            .contents__new__create__form__field--left
+              = f.text_field :place, placeholder: "例)ドイツ"
+            .contents__new__create__form__field--right
+              = f.label      :price,        "予算", class: "price"
+            .contents__new__create__form__field--left
+              約
+              = f.text_field :price, placeholder: "例)220000"
+              円
+            .contents__new__create__form__field--right
+              = f.label      :detail,       "企画詳細", class: ""
+            .contents__new__create__form__field--left
+              = f.text_area  :detail, placeholder: "例)ドイツに留学経験のある私がみなさんをサポートします！ミュンヘンから出発して、イタリアのヴェネチアまで10時間のドライブ旅を満喫しましょう！\n\n持ち物\nパスポート、お菓子、楽しむ気持ちetc...\n\n追記\nドイツ語は私が話せるので安心してください！\nまた、ドイツ人のほとんどの人が英語も話せるので、英語さえ話せれば旅行に問題はありません！"
+            .contents__new__create__form__field--submit
+              = f.submit "企画作成", class: "submit"
+
+= render partial: "footer"
