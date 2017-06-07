@@ -1,0 +1,32 @@
+@mixin detail-template() {
+  margin: 10px 0;
+  width: 30%;
+  float: left;
+  color: $main-font-color;
+  text-align: center;
+  font-size: 20px;
+}
+
+@mixin devise-template (){
+  color: white;
+  height: 50px;
+  width: 400px;
+  margin: 10px auto;
+  text-align: center;
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+@mixin header-template() {
+  float: left;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+
+$default-side-space: 0 200px;
+$default-border: 1px solid #A4A4A4;
+$main-back-ground: #FBEFF2;
+$sub-back-ground: white;
+$main-font-color: #424242;
+$sub-font-color: #BDBDBD;

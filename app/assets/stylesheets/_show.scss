@@ -1,0 +1,124 @@
+
+.contents {
+
+  &__show {
+    background-color: $main-back-ground;
+    padding: $default-side-space;
+    padding-bottom: 40px;
+
+    &__title {
+      padding-top: 40px;
+      color: $main-font-color;
+      font-size: 30px;
+      text-align: left;
+    }
+
+    &__tab {
+      background-color: $main-back-ground;
+      height: 75px;
+      border-bottom: $default-border;
+      padding-top: 20px;
+      margin-bottom: 50px;
+
+      &--detail {
+        color: $main-font-color;
+        float: left;
+        height: 55px;
+        font-size: 27px;
+        font-weight: 100;
+        padding-right: 20px;
+        border-bottom: 2px solid #FA8258;
+      }
+      &--message {
+        color: $sub-font-color;
+        float: left;
+        font-size: 27px;
+        padding-left: 20px;
+      }
+    }
+
+    &__top {
+        // margin: 30px 0 0 30px;
+        width: 700px;
+        border: $default-border;
+        background-color: $sub-back-ground;
+      &__image {
+
+      }
+      .image {
+        width: 700px;
+      }
+
+      &__user {
+        height: 100px;
+        padding: 8px;
+        &--icon {
+        background-color: black;
+        height: 90px;
+        width: 90px;
+          float: left;
+
+        }
+
+        &--name {
+          float: left;
+        }
+
+        &--like {
+
+        }
+
+        &--member {
+          color: $sub-font-color;
+          float: right;
+          font-size: 30px;
+        }
+      }
+
+      &__description {
+        padding: 8px;
+        color: $sub-font-color;
+
+      }
+    }
+
+    &__bottom {
+      height: 700px;
+      width: 700px;
+      background-color: $sub-back-ground;
+      margin-top: 30px;
+      border: $default-border;
+      &__left {
+        @include detail-template();
+        &__date {
+          color: $sub-font-color;
+        }
+      }
+
+      &__center {
+          @include detail-template();
+          border-left: $default-border;
+          border-right: $default-border;
+        &__price {
+          color: $sub-font-color;
+
+        }
+      }
+
+      &__right {
+        @include detail-template();
+
+        &__place {
+          color: $sub-font-color;
+        }
+      }
+
+      &__detail {
+        clear:both;
+        margin: 150px 40px;
+        padding-top: 30px;
+        border-top: $default-border;
+      }
+    }
+  }
+}

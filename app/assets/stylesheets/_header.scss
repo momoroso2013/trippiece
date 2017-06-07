@@ -1,0 +1,43 @@
+
+.header {
+  background-color: #F3E2A9;
+  height: 60px;
+  width: 100%;
+  color: blue;
+  &__var {
+    &__logo {
+      margin-left: 40px;
+      height: 55px;
+      width: 200px;
+      background-image: url(https://trippiece-dev.s3.amazonaws.com/static/img/pc/logo_big.514ceeae.png);
+      background-size: 200px;
+      float: left;
+    }
+    &__travel-search {
+      @include header-template();
+    }
+    &__nav {
+      @include header-template();
+      &__mylist{
+      @include header-template();
+      margin-top: 0px;
+
+      }
+      &__message {
+      @include header-template();
+      margin-top: 0px;
+      }
+      &__notification {
+      @include header-template();
+      margin-top: 0px;
+      }
+      &__user {
+      @include header-template();
+      margin-top: 0px;
+      }
+    }
+    &__create-project {
+      @include header-template();
+    }
+  }
+}

@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
 
   def index
+    @projects = Project.all
   end
 
   def new
@@ -14,6 +15,11 @@ class ProjectsController < ApplicationController
     else
       render :new
     end
+  end
+
+
+  def show
+    @project = Project.find(params[:id])
   end
 
 
