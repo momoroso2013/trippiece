@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
 
+
   def index
     @projects = Project.all
   end
@@ -31,4 +32,6 @@ class ProjectsController < ApplicationController
     .permit(:title, :description, :image, :place, :price, :detail, :start_at, :end_at)
     .merge(user_id: current_user.id)
   end
+
 end
+
