@@ -38,7 +38,6 @@
     }
 
     &__top {
-        // margin: 30px 0 0 30px;
         width: 700px;
         border: $default-border;
         background-color: $sub-back-ground;
@@ -62,6 +61,10 @@
 
         &--name {
           float: left;
+          font-size: 40px;
+          margin-left: 10px;
+          font-weight: bold;
+          color: #FE642E;
         }
 
         &--like {
@@ -118,6 +121,42 @@
         margin: 150px 40px;
         padding-top: 30px;
         border-top: $default-border;
+      }
+    }
+
+    &__right {
+      float: right;
+      background-color: $sub-back-ground;
+      height: 270px;
+      width: 350px;
+      padding-top: 10px;
+      border: $default-border;
+
+      &__status {
+        text-align: center;
+        &--title {
+        margin: 10px auto;
+        color: $sub-font-color;
+
+        }
+
+        &--status {
+        margin: 10px auto;
+        font-size: 34px;
+        color: #FF8000;
+        }
+      }
+
+      &__button {
+        @include right-template();
+        color: $sub-back-ground;
+        background-color: #FE2E64;
+      }
+
+      &__like {
+        @include right-template();
+        background-color: $sub-back-ground;
+        color: $sub-font-color;
       }
     }
   }

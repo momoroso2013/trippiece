@@ -15,7 +15,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   # process convert: "jpg"
-  process resize_to_limit: [330, 190]
+  process resize_to_limit: [500, 500]
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)

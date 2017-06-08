@@ -1,0 +1,58 @@
+.contents {
+  &__participant {
+    padding-top: 80px;
+    background-color: $main-back-ground;
+    padding-bottom: 200px;
+    &__image {
+    margin: auto;
+    background-color: $sub-back-ground;
+    border: $default-border;
+    width: 1000px;
+    height: 500px;
+      .back-image {
+        width: 1000px;
+        height: 340px;
+      }
+
+      &--title {
+        color: $main-font-color;
+        font-size: 40px;
+      }
+
+      &--text {
+        color: $main-font-color;
+        font-size: 30px;
+      }
+    }
+
+    &__form {
+      background-color: $sub-back-ground;
+      border: $default-border;
+      height: 200px;
+      width: 500px;
+      margin: auto;
+      margin-top: 40px;
+      text-align: center;
+      padding: 10px;
+
+      .text {
+        font-size: 30px;
+        color: $main-font-color;
+      }
+
+      .message {
+        margin-top: 10px;
+        width: 400px;
+        height: 60px;
+      }
+
+      .submit {
+        margin-top: 20px;
+        width: 150px;
+        height: 35px;
+        background-color: #FE642E;
+        color: white;
+      }
+    }
+  }
+}

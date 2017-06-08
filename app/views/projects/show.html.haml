@@ -7,14 +7,24 @@
     .contents__show__title--status
     .contents__show__tab
       .contents__show__tab--detail 企画詳細
-      .contents__show__tab--message 企画者メッセージ
+      .contents__show__tab--message 企画者にメッセージ
+    .contents__show__right
+      .contents__show__right__status
+        .contents__show__right__status--title
+          企画ステータス
+        .contents__show__right__status--status
+          申し込み受付中
+      .contents__show__right__button= link_to "申し込む",  new_project_participant_path(@project)
+      .contents__show__right__like
+        お気に入り
     .contents__show__top
       .contents__show__top__image
       - if @project.image?
         = image_tag @project.image.url, class: "image"
       .contents__show__top__user
         .contents__show__top__user--icon アイコン
-        .contents__show__top__user--name 名前
+        .contents__show__top__user--name
+          = @project.user.name
         .contents__show__top__user--like
         .contents__show__top__user--member 0人
       .contents__show__top__description
@@ -42,5 +52,6 @@
       .contents__show__bottom__detail
         %br
         = @project.detail
+
 
 = render partial: "footer"
