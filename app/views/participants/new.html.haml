@@ -1,0 +1,20 @@
+= render partial: "projects/header"
+
+.contents
+  .contents__participant
+    - if @project.image?
+      .contents__participant__image
+        = image_tag @project.image.url, class: "back-image"
+        .contents__participant__image--title
+          = @project.title
+        .contents__participant__image--text 申し込みフォーム
+    .contents__participant__form
+      = form_for [@project, @participant] do |f|
+        .contents__participant__form__text
+        = f.label :message, "意気込みを一言お願いします！", class: "text"
+        .contents__participant__form__field
+        = f.text_area :message, class: "message", placeholder: "例) 初めての海外なのでわくわくしています！\n全力で楽しみます！"
+        .contents__participant__form__submit
+        = f.submit "申し込む", class: "submit"
+
+= render partial: "projects/footer"
