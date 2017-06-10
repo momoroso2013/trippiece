@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170608052137) do
+ActiveRecord::Schema.define(version: 20170610042241) do
 
   create_table "participants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "message",    limit: 65535
@@ -22,39 +22,19 @@ ActiveRecord::Schema.define(version: 20170608052137) do
     t.index ["user_id"], name: "index_participants_on_user_id", using: :btree
   end
 
-  create_table "project_participants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id"
-    t.integer  "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_project_participants_on_project_id", using: :btree
-    t.index ["user_id"], name: "index_project_participants_on_user_id", using: :btree
-  end
-
-  create_table "project_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id"
-    t.integer  "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_project_users_on_project_id", using: :btree
-    t.index ["user_id"], name: "index_project_users_on_user_id", using: :btree
-  end
-
   create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "title",          limit: 65535, null: false
-    t.text     "description",    limit: 65535, null: false
+    t.text     "title",       limit: 65535, null: false
+    t.text     "description", limit: 65535, null: false
     t.string   "image"
     t.string   "place"
     t.integer  "price"
     t.date     "start_at"
     t.date     "end_at"
-    t.text     "detail",         limit: 65535
+    t.text     "detail",      limit: 65535
     t.integer  "user_id"
-    t.integer  "status",                       null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.integer  "participant_id"
-    t.index ["participant_id"], name: "index_projects_on_participant_id", using: :btree
+    t.integer  "status",                    null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.index ["user_id"], name: "index_projects_on_user_id", using: :btree
   end
 
@@ -81,10 +61,5 @@ ActiveRecord::Schema.define(version: 20170608052137) do
 
   add_foreign_key "participants", "projects"
   add_foreign_key "participants", "users"
-  add_foreign_key "project_participants", "projects"
-  add_foreign_key "project_participants", "users"
-  add_foreign_key "project_users", "projects"
-  add_foreign_key "project_users", "users"
-  add_foreign_key "projects", "participants"
   add_foreign_key "projects", "users"
 end

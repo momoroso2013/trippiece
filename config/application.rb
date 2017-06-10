@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module Trippiece
   class Application < Rails::Application
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
     config.generators do |g|
       g.javascripts false
       g.helper false
@@ -15,3 +17,5 @@ module Trippiece
     end
   end
 end
+
+

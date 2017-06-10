@@ -26,7 +26,9 @@
         .contents__show__top__user--name
           = @project.user.name
         .contents__show__top__user--like
-        .contents__show__top__user--member 0人
+        .contents__show__top__user--member
+          = @project.participants.count
+          人
       .contents__show__top__description
         = @project.description
     .contents__show__bottom

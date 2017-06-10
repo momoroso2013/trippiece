@@ -7,8 +7,11 @@ class ParticipantsController < ApplicationController
 
   def create
     @participant = Participant.new(participant_params)
-    # binding.pry
-    @participant.save
+    if @participant.save
+      redirect_to :root
+    else
+      render :new
+    end
   end
 
   private
@@ -17,5 +20,6 @@ class ParticipantsController < ApplicationController
     params
       .require(:participant)
       .permit(:message)
+      .merge(project_id: params[:project_id], user_id: current_user.id)
   end
 end
