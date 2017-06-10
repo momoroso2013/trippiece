@@ -1,5 +1,4 @@
 class Participant < ApplicationRecord
-  has_many :project_participants
-  has_many :projects, through: :project_participants
+  has_many :projects
   belongs_to :user
 end
