@@ -9,8 +9,8 @@
 | introduction | text   |                                          |
 
 ### Association
- * has_many :project_users
- * has_many :projects, through::project_users
+ * has_many :projects
+ * has_many :participants
  * has_many :likes
 
 
@@ -31,21 +31,21 @@
 
 
 ### Association
- * has_many :project_users
- * has_many :users through::project_users
+ * has_many :participants
+ * belongs_to :user
  * has_many :likes
 
+## participants table
 
-## project_users table
-
-| Column     | Type       | Options           |
-|:----------:|:----------:|:-----------------:|
-| project_id | references | foreign_key: true |
-| user_id    | references | foreign_key: true |
+| Column       | Type       | Options           |
+|:------------:|:----------:|:-----------------:|
+| message      | text       |                   |
+| user_id      | references | foreign_key: true |
+| project_id   | references | foreign_key: true |
 
 ### Association
+ * has_many :projects
  * belongs_to :user
- * belongs_to :project
 
 ## likes table
 
