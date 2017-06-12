@@ -1,10 +1,23 @@
 .header
   .header__var
     %a{ href: "/", class: "header__var__logo" }
-    .header__var__travel-search 企画の検索
+    .header__var__travel
+      .header__var__travel__search
+        %i.fa.fa-search
+        %input{ placeholder: "企画を探そう！", type: 'text'}
     .header__var__nav
-      .header__var__nav__mylist リスト
-      .header__var__nav__message メッセージ
-      .header__var__nav__notification 通知
-      .header__var__nav__user= link_to "ユーザー", edit_user_registration_path
-    .header__var__create-project= link_to "企画作成", new_project_path
+      .header__var__nav__mylist
+        %i.fa.fa-briefcase リスト
+      .header__var__nav__message
+        %i.fa.fa-comment-o メッセージ
+      .header__var__nav__notification
+        %i.fa.fa-bell 通知
+      .header__var__nav__user
+        = link_to edit_user_registration_path do
+          %i.fa.fa-user-o ユーザー
+    .header__var__create-project
+      = link_to new_project_path do
+        .header__var__create-project__create
+          企画作成
+
+
