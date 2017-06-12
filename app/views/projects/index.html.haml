@@ -1,23 +1,59 @@
+%script(src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js")
 - if user_signed_in?
 
   = render partial: "header"
   .contents
     .contents__pickup
       .contents__pickup__slide
-        .contents__pickup__slide__text 海外旅行特集
+        .slider
+          %a(href="https://trippiece.com/features/international/")
+            %img{src: "https://s3-ap-northeast-1.amazonaws.com/trippiece/feature/international/banner_l.jpg"}
+          %a(href="https://trippiece.com/features/official/")
+            %img{src: "https://s3-ap-northeast-1.amazonaws.com/trippiece/feature/official/banner_l.jpg"}
+          %a(href="http://southafrica.trippiece.com/?_ga=2.151253561.1233707549.1496823962-547937025.1496061100")
+            %img{src: "https://s3-ap-northeast-1.amazonaws.com/trippiece/campaign/southafrica2016/banner_l.jpg"}
+          %a(href="https://trippiece.com/features/kansai/")
+            %img{src: "https://trippiece.s3.amazonaws.com/feature/kansai/banner_l.jpg"}
+          %a(href="https://trippiece.com/features/weekday/")
+            %img{src: "https://trippiece.s3.amazonaws.com/feature/weekday/banner_l.jpg"}
       .contents__pickup__sub
         %ul
-          %li ハワイ
-          %li ドイツ
-          %li オーストラリア
-          %li インド
+          %li
+            %a(href="https://trippiece.com/features/international/")
+              %img{src: "https://s3-ap-northeast-1.amazonaws.com/trippiece/feature/international/banner_s.jpg"}
+          %li
+            %a(href="https://trippiece.com/features/official/")
+              %img{src: "https://s3-ap-northeast-1.amazonaws.com/trippiece/feature/official/banner_s.jpg"}
+          %li
+            %a(href="http://southafrica.trippiece.com/?_ga=2.151253561.1233707549.1496823962-547937025.1496061100")
+              %img{src: "https://s3-ap-northeast-1.amazonaws.com/trippiece/campaign/southafrica2016/banner_s.jpg"}
+          %li
+            %a(href="https://trippiece.com/features/kansai/")
+              %img{src: "https://trippiece.s3.amazonaws.com/feature/kansai/banner_s.jpg"}
+          %li
+            %a(href="https://trippiece.com/features/weekday/")
+              %img{src: "https://trippiece.s3.amazonaws.com/feature/weekday/banner_s.jpg"}
     .contents__main
       .contents__main__tab
         .contents__main__tab__all 総合
         .contents__main__tab__date 日程
       .contents__main__sort
-        .contents__main__sort__recommend オススメ順
-        .contents__main__sort__project-status 受付状態別
+        .contents__main__sort__recommend
+          オススメ順
+          %i.fa.fa-caret-down
+          %ul#select-1
+            %li.tabRecommend オススメ順
+            %li.tabNew 新着順
+            %li.tabUploaded 更新順
+            %li.tabStart 開催日順
+        .contents__main__sort__project-status
+          受付状態別
+          %i.fa.fa-caret-down
+          %ul#select-2
+            %li 申込受付中のみ
+            %li 中止・開催済以外
+            %li 申込受付中と受付前
+            %li 開催日順
       .contents__main__projects
         = render partial: "trip", collection: @projects, as: "project"
   = render partial: "footer"
