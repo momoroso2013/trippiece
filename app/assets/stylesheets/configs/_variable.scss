@@ -7,7 +7,7 @@
   font-size: 20px;
 }
 
-@mixin devise-template (){
+@mixin devise-template() {
   color: white;
   height: 50px;
   width: 400px;
@@ -32,6 +32,16 @@
         text-align: center;
 }
 
+@mixin side-button-template() {
+  border: $default-border;
+  background-color: $button-color;
+  height: 50px;
+  width: 40px;
+  padding-top: 10px;
+  text-align: center;
+  margin-top: calc( 450px / 2 );
+}
+
 $form-width: 350px;
 $default-side-space: 0 200px;
 $default-border: 1px solid #A4A4A4;
@@ -39,3 +49,4 @@ $main-back-ground: #FBEFF2;
 $sub-back-ground: white;
 $main-font-color: #424242;
 $sub-font-color: #BDBDBD;
+$button-color: #FE642E;
