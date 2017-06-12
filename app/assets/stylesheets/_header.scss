@@ -6,15 +6,32 @@
   color: blue;
   &__var {
     &__logo {
-      margin-left: 40px;
+      margin: 0 150px 0 40px;
       height: 55px;
       width: 200px;
       background-image: url(https://trippiece-dev.s3.amazonaws.com/static/img/pc/logo_big.514ceeae.png);
       background-size: 200px;
       float: left;
+
     }
-    &__travel-search {
+    &__travel {
       @include header-template();
+
+      &__search {
+        background-color: white;
+        border: $default-border;
+        height: 30px;
+
+        i {
+          color: $sub-font-color;
+          margin-left: 3px;
+        }
+
+        input {
+          outline: none;
+          border: white;
+        }
+      }
     }
     &__nav {
       @include header-template();
@@ -38,6 +55,19 @@
     }
     &__create-project {
       @include header-template();
+
+      &__create {
+        margin-left: 50px;
+        background-color: $button-color;
+        border: $default-border;
+        color: white;
+        font-weight: bold;
+        font-size: 17px;
+        height: 40px;
+        width: 150px;
+        text-align: center;
+        padding-top: 8px;
+      }
     }
   }
 }
