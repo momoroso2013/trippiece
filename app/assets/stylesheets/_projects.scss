@@ -3,19 +3,11 @@
   &__pickup {
 
     &__slide {
-      background-image: url(https://s3-ap-northeast-1.amazonaws.com/trippiece/feature/international/banner_l.jpg);
-      color: #8181F7;
-      height: 450px;
-      width: 100vw;
-      &__text {
-        font-size: 40px;
-        padding: $default-side-space;
-      }
     }
     &__sub {
       padding: 0 40px;
       background-color: #CEF6D8;
-      height: 70px;
+      height: 80px;
       padding: $default-side-space;
       border-bottom: $default-border;
 
@@ -23,9 +15,14 @@
         color: blue;
         font-size: 30px;
         font-weight: bold;
+        margin-left: 150px;
         li {
           float: left;
-          padding-right: 40px;
+
+          img {
+            height: 80px;
+            width: 150px;
+          }
         }
       }
     }
@@ -68,6 +65,26 @@
         border: $default-border;
         padding: 15px;
         color: $main-font-color;
+
+        #select-1 {
+          margin-top: 17px;
+          position: relative;
+          display: none;
+          transition: background-color 800ms;
+
+          li {
+            border: $default-border;
+            color: $main-font-color;
+            background-color: $sub-back-ground;
+            height: 50px;
+            padding: 15px;
+          }
+
+          li:hover {
+            background-color: $button-color;
+            transition: background-color 600ms;
+          }
+        }
       }
       &__project-status {
         background-color: $sub-back-ground;
@@ -78,7 +95,27 @@
         padding: 15px;
         color: $main-font-color;
 
+        #select-2 {
+          margin-top: 17px;
+          position: relative;
+          display: none;
 
+          li {
+            background-color: black;
+            transition: background-color 800ms;
+            border: $default-border;
+            color: $main-font-color;
+            background-color: $sub-back-ground;
+            height: 50px;
+            padding: 15px;
+            margin-right: 30px;
+          }
+
+          li:hover {
+            background-color: $button-color;
+            transition: background-color 600ms;
+          }
+        }
       }
     }
     &__projects {
@@ -141,32 +178,6 @@
           }
         }
       }
-    }
-  }
-}
-
-.footer {
-  width: 100vw;
-  background-color: $main-back-ground;
-  padding: $default-side-space;
-
-  &__footer {
-  padding-top: 30px;
-  height: 300px;
-  border-top: $default-border;
-  }
-
-  tr {
-    th {
-    text-align: center;
-    font-weight: bold;
-    color: $main-font-color;
-    }
-
-    td {
-    text-align: center;
-    padding: 10px 40px;
-    color: $sub-font-color;
     }
   }
 }
