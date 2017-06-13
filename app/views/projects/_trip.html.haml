@@ -7,6 +7,10 @@
         .contents__main__projects__trip__top__status 申込受付前
     .contents__main__projects__trip__bottom
       .contents__main__projects__trip__bottom__user-image
+        - if project.user.image?
+          = image_tag project.user.image, class: "user-image"
+        - else
+          %i.fa.fa-user
       .contents__main__projects__trip__bottom__project-name
         = project.title
       .contents__main__projects__trip__bottom__project-date

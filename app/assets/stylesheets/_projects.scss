@@ -158,9 +158,20 @@
           &__user-image {
             height: 70px;
             width: 70px;
-            background-color: black;
             float: left;
+
+            i.fa.fa-user {
+              color: $sub-font-color;
+              font-size: 60px;
+              padding-left: 15%;
+            }
+
+            .user-image {
+              height: 70px;
+              width: 70px;
+            }
           }
+
           &__project-name {
             color: $main-font-color;
           }
