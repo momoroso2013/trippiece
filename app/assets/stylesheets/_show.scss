@@ -44,7 +44,7 @@
       &__image {
 
       }
-      .image {
+      .trip-image {
         width: 700px;
       }
 
@@ -52,10 +52,21 @@
         height: 100px;
         padding: 8px;
         &--icon {
-        background-color: black;
+        background-color: $sub-font-color;
         height: 90px;
         width: 90px;
-          float: left;
+        float: left;
+
+          i.fa.fa-user{
+            color: white;
+            font-size: 90px;
+            padding-left: 15px;
+          }
+
+          .user-image {
+            height: 90px;
+            width: 90px;
+          }
 
         }
 

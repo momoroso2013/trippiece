@@ -14,15 +14,20 @@
           企画ステータス
         .contents__show__right__status--status
           申し込み受付中
-      .contents__show__right__button= link_to "申し込む",  new_project_participant_path(@project)
+      .contents__show__right__button
+        = link_to "申し込む",  new_project_participant_path(@project)
       .contents__show__right__like
         お気に入り
     .contents__show__top
       .contents__show__top__image
       - if @project.image?
-        = image_tag @project.image.url, class: "image"
+        = image_tag @project.image.url, class: "trip-image"
       .contents__show__top__user
-        .contents__show__top__user--icon アイコン
+        .contents__show__top__user--icon
+          - if @user.image?
+            = image_tag @user.image, class: "user-image"
+          - else
+            %i.fa.fa-user
         .contents__show__top__user--name
           = @project.user.name
         .contents__show__top__user--like
