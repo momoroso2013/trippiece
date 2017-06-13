@@ -138,21 +138,21 @@
     &__right {
       float: right;
       background-color: $sub-back-ground;
-      height: 270px;
-      width: 350px;
+      height: 230px;
+      width: 300px;
       padding-top: 10px;
       border: $default-border;
 
       &__status {
         text-align: center;
         &--title {
-        margin: 10px auto;
+        margin: 8px auto;
         color: $sub-font-color;
 
         }
 
         &--status {
-        margin: 10px auto;
+        margin: 8px auto;
         font-size: 34px;
         color: #FF8000;
         }
