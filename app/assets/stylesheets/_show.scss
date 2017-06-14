@@ -13,6 +13,15 @@
       text-align: left;
     }
 
+    &__pv {
+      margin-left: 50%;
+      font-size: 24px;
+
+      i.fa.fa-eye {
+        color: $button-color;
+      }
+    }
+
     &__tab {
       background-color: $main-back-ground;
       height: 75px;
