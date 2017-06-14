@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
 
+  impressionist actions: [:show,:index]
 
   def index
     @projects = Project.all

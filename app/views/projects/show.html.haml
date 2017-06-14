@@ -4,6 +4,11 @@
   .contents__show
     .contents__show__title
       = @project.title
+    .contents__show__pv
+      %i.fa.fa-eye
+      この企画を見た人
+      = @project.impressionist_count(filter: :session_hash)
+      人
     .contents__show__title--status
     .contents__show__tab
       .contents__show__tab--detail 企画詳細
