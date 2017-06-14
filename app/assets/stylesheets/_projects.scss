@@ -53,10 +53,12 @@
       }
     }
     &__sort {
+      position: relative;
       background-color: $main-back-ground;
       margin: $default-side-space;
       height: 70px;
       padding-top: 10px;
+      z-index: 2;
       &__recommend {
         background-color: $sub-back-ground;
         font-weight: bold;
@@ -119,10 +121,12 @@
       }
     }
     &__projects {
+      z-index: 1;
       background-color: $main-back-ground;
       height: 600px;
       padding: $default-side-space;
-      overflow: scroll;;
+      overflow: scroll;
+      position: relative;
       &__trip {
         height: 300px;
         width: 330px;
@@ -131,27 +135,34 @@
         margin: 10px;
 
         &__top {
+          float: left;
           height: 190px;
 
           &__image {
             height: 190px;
+            float: left;
 
             .uploaded_image {
               width: 330px;
               height: 190px;
+              float: left;
             }
           }
-          &__status {
+        }
+
+        &__status {
             height: 30px;
             width: 100px;
             color: white;
             background: rgba(45,45,45, 0.5);
-            float:right;
-            margin: 9px 9px 0 0;
+            margin: 9px 9px 0 210px;
+            position: absolute;
             text-align: center;
-          }
+
         }
+
         &__bottom {
+          clear: both;
           background-color: $sub-back-ground;
           height: calc(300px - 190px);
           border: $default-border;
@@ -170,19 +181,30 @@
               height: 70px;
               width: 70px;
             }
+
           }
 
           &__project-name {
             color: $main-font-color;
+            float: left;
+            width: 70%;
+            // font-size: 29px;
           }
           &__project-date {
-            float: left;
+            clear: both;
+            // float: left;
             color: $sub-font-color;
           }
           &__project-member {
-            float: right;
-            color: $sub-font-color;
+            float: left;
+            color: $main-font-color;
 
+          }
+
+          &__project-pv {
+            float: left;
+            font-size: 80%;
+            color: $sub-font-color;
           }
           &__project-status-color {
 
