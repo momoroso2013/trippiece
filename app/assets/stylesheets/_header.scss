@@ -51,6 +51,17 @@
       &__user {
       @include header-template();
       margin-top: 0px;
+
+        #user-info {
+          height: 40px;
+        }
+
+        #user-tab {
+          display: none;
+          background-color: $sub-back-ground;
+          border-radius: 5px;
+          text-align: center;
+        }
       }
     }
     &__create-project {

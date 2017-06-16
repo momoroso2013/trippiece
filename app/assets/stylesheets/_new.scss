@@ -54,6 +54,20 @@
           color: $main-font-color;
         }
         &--submit {
+
+          #project_status {
+            height: 40px;
+            color: $button-color;
+            font-weight: bold;
+          }
+
+          .submit {
+            height: 40px;
+            color: white;
+            background-color: #F7BE81;
+            box-shadow:1px 1px #1a6ea0;
+            border-radius: 10px;
+          }
         }
       }
     }

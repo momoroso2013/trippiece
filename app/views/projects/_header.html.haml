@@ -13,8 +13,15 @@
       .header__var__nav__notification
         %i.fa.fa-bell 通知
       .header__var__nav__user
-        = link_to edit_user_registration_path do
-          %i.fa.fa-user-o ユーザー
+        #user-info
+          %i.fa.fa-user-o
+            ユーザー
+        #user-tab
+          = link_to edit_user_registration_path do
+            ユーザー情報編集
+          %br
+          = link_to user_path(@user) do
+            企画編集
     .header__var__create-project
       = link_to new_project_path do
         .header__var__create-project__create
