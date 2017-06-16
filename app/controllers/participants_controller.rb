@@ -1,5 +1,7 @@
 class ParticipantsController < ApplicationController
 
+  before_action :find_user, only: [:new, :create]
+
   def new
     @participant = Participant.new
     @project = Project.find(params[:project_id])
@@ -15,6 +17,10 @@ class ParticipantsController < ApplicationController
   end
 
   private
+
+  def find_user
+    @user = current_user
+  end
 
   def participant_params
     params

@@ -20,4 +20,14 @@ $(function() {
   $('.contents__main__sort__project-status').on("click", function() {
     $("#select-2").slideToggle("slow");
     });
+
+  $('#user-info').mouseover(function(){
+    $(this).hide();
+    $("#user-tab").show();
+  });
+
+  $('#user-tab').mouseout(function(){
+    $("#user-tab").hide();
+    $("#user-info").show();
+  });
 });

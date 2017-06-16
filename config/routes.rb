@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :projects do
     resources :participants
   end
+  resources :users
 end

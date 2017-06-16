@@ -3,7 +3,7 @@
 .contents
   .contents__new
     .contents__new__create
-      %h1 企画を作成する。
+      %h1 企画を編集する。
       .contents__new__create__form
         = form_for @project do |f|
           .contents__new__create__form__field
@@ -44,7 +44,7 @@
               = f.text_area  :detail, placeholder: "例)ドイツに留学経験のある私がみなさんをサポートします！ミュンヘンから出発して、イタリアのヴェネチアまで10時間のドライブ旅を満喫しましょう！\n\n持ち物\nパスポート、お菓子、楽しむ気持ちetc...\n\n追記\nドイツ語は私が話せるので安心してください！\nまた、ドイツ人のほとんどの人が英語も話せるので、英語さえ話せれば旅行に問題はありません！"
             .contents__new__create__form__field--submit
               = f.select :status, Project.statuses.keys, {}, class: 'form-control'
-              = f.submit "作成", class: "submit"
+              = f.submit "編集を保存", class: "submit"
 
 = render partial: "footer"
 

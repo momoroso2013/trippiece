@@ -4,7 +4,11 @@
       - if project.image?
         .contents__main__projects__trip__top__image
           = image_tag project.image.thumb.url, class: "uploaded_image"
-    .contents__main__projects__trip__status 申込受付前
+    .contents__main__projects__trip__status
+      - if project.published?
+        申込受付前
+      - else project.accepting?
+        申込受付中
     .contents__main__projects__trip__bottom
       .contents__main__projects__trip__bottom__user-image
         - if project.user.image?
@@ -26,6 +30,4 @@
         = project.start_at
         から
         = project.end_at
-
-
       .contents__main__projects__trip__bottom__project-status-color

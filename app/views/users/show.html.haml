@@ -1,0 +1,43 @@
+= render partial: "projects/header"
+
+.contents
+  .contents__project__show
+    - @projects.each do |project|
+      .edit_project
+        = link_to edit_project_path(project) do
+          .contents__main__projects__trip
+            .contents__main__projects__trip__top
+              - if project.image?
+                .contents__main__projects__trip__top__image
+                  = image_tag project.image.thumb.url, class: "uploaded_image"
+            .contents__main__projects__trip__status
+              - if project.draft?
+                下書き
+              - elsif project.published?
+                申込受付前
+              - elsif project.accepting?
+                申込受付中
+              - else project.deleted?
+                削除したい
+            .contents__main__projects__trip__bottom
+              .contents__main__projects__trip__bottom__user-image
+                - if project.user.image?
+                  = image_tag project.user.image, class: "user-image"
+                - else
+                  %i.fa.fa-user
+              .contents__main__projects__trip__bottom__project-name
+                = project.title
+              .contents__main__projects__trip__bottom__project-member
+                申込人数
+                = project.participants.count
+                人
+              .contents__main__projects__trip__bottom__project-pv
+                %br
+                この企画を見た人数
+                = project.impressionist_count(filter: :session_hash)
+                人
+              .contents__main__projects__trip__bottom__project-date
+                = project.start_at
+                から
+                = project.end_at
+              .contents__main__projects__trip__bottom__project-status-color
