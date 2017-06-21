@@ -10,6 +10,9 @@
               - if project.image?
                 .contents__main__projects__trip__top__image
                   = image_tag project.image.thumb.url, class: "uploaded_image"
+              - else
+                .contents__main__projects__trip__top__image
+                  = image_tag "http://www.oradoko.jp/shop/images/noimage.jpg", class: "uploaded_image"
             .contents__main__projects__trip__status
               - if project.draft?
                 下書き
