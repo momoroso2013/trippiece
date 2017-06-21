@@ -7,21 +7,23 @@
     margin: auto;
     background-color: $sub-back-ground;
     border: $default-border;
-    width: 1000px;
-    height: 500px;
+    width: 550px;
+    height: 450px;
       .back-image {
-        width: 1000px;
+        width: 550px;
         height: 340px;
       }
 
       &--title {
         color: $main-font-color;
-        font-size: 40px;
+        font-size: 35px;
+        padding-left: 30px;
       }
 
       &--text {
-        color: $main-font-color;
-        font-size: 30px;
+        padding-left: 20px;
+        color: $sub-font-color;
+        font-size: 20px;
       }
     }
 

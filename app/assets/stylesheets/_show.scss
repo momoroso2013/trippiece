@@ -54,12 +54,13 @@
 
       }
       .trip-image {
-        width: 600px;
+        width: 597px;
       }
 
       &__user {
         height: 100px;
         padding: 8px;
+        border-top: $default-border;
         &--icon {
         background-color: $sub-font-color;
         height: 90px;

@@ -5,9 +5,10 @@
     - if @project.image?
       .contents__participant__image
         = image_tag @project.image.url, class: "back-image"
+        .contents__participant__image--text
+          企画名
         .contents__participant__image--title
           = @project.title
-        .contents__participant__image--text 申し込みフォーム
     .contents__participant__form
       = form_for [@project, @participant] do |f|
         .contents__participant__form__text
