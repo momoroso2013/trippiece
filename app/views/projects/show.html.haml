@@ -18,7 +18,10 @@
         .contents__show__right__status--title
           企画ステータス
         .contents__show__right__status--status
-          申し込み受付中
+          -if @project.published?
+            申込受付前
+          -else @project.accepting?
+            申込受付中
       .contents__show__right__button
         = link_to "申し込む",  new_project_participant_path(@project)
       .contents__show__right__like
@@ -27,6 +30,8 @@
       .contents__show__top__image
       - if @project.image?
         = image_tag @project.image.url, class: "trip-image"
+      -else
+        = image_tag "http://www.oradoko.jp/shop/images/noimage.jpg", class: "trip-image"
       .contents__show__top__user
         .contents__show__top__user--icon
           - if @user.image?
@@ -63,7 +68,6 @@
           = @project.place
       .contents__show__bottom__detail
         %br
-        = @project.detail
-
+        = simple_format(@project.detail)
 
 = render partial: "footer"
