@@ -20,9 +20,9 @@ class ProjectsController < ApplicationController
     end
   end
 
-
   def show
     @project = Project.find(params[:id])
+    @participant_user_ids = @project.participants.pluck(:user_id)
     @user = @project.user
   end
 

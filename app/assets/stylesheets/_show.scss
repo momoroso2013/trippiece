@@ -6,6 +6,17 @@
     padding: $default-side-space;
     padding-bottom: 40px;
 
+    &__notice {
+      &__arleady_accept {
+        background-color: $button-color;
+        color: $main-font-color;
+        height: 40px;
+        font-size: 24px;
+        text-align: center;
+        border-radius: 2em;
+      }
+    }
+
     &__title {
       padding-top: 40px;
       color: $main-font-color;
