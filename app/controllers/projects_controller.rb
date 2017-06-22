@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
 
   impressionist actions: [:show,:index]
   before_action :find_user, only: [:index, :new, :create, :show, :edit]
+  before_action :find_project, only: [:show, :edit, :update, :destroy]
 
   def index
     @projects = Project.where(status: [:accepting,:published])
@@ -21,17 +22,14 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params[:id])
     @participant_user_ids = @project.participants.pluck(:user_id)
     @user = @project.user
   end
 
   def edit
-    @project = Project.find(params[:id])
   end
 
   def update
-    @project = Project.find(params[:id])
     if @project.update(project_params)
       redirect_to :root
     else
@@ -39,10 +37,19 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def destroy
+    @project.destroy
+    redirect_to :root
+  end
+
   private
 
   def find_user
     @user = current_user
+  end
+
+  def find_project
+    @project = Project.find(params[:id])
   end
 
   def project_params

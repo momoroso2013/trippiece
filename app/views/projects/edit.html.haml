@@ -45,6 +45,7 @@
             .contents__new__create__form__field--submit
               = f.select :status, Project.localed_statuses, {}, class: 'form-control'
               = f.submit "編集を保存", class: "submit"
-
+              = form_for @project, html: { method: :delete } do |f|
+                = f.submit "企画を削除", class: "submit_delete"
 = render partial: "footer"
 
