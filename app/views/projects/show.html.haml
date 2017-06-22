@@ -23,7 +23,10 @@
           -else @project.accepting?
             申込受付中
       .contents__show__right__button
-        = link_to "申し込む",  new_project_participant_path(@project)
+        -if current_user.id == @user.id
+          = link_to "企画を編集", edit_project_path
+        -else
+          = link_to "申し込む",  new_project_participant_path(@project)
       .contents__show__right__like
         お気に入り
     .contents__show__top
