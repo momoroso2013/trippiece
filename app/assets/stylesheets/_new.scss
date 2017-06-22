@@ -63,10 +63,20 @@
 
           .submit {
             height: 40px;
+            padding: 0 10px;
             color: white;
             background-color: #F7BE81;
             box-shadow:1px 1px #1a6ea0;
             border-radius: 10px;
+          }
+          .submit_delete {
+            height: 40px;
+            padding: 0 10px;
+            color: white;
+            background-color: #DF0101;
+            box-shadow:1px 1px #1a6ea0;
+            border-radius: 10px;
+            float: left;
           }
         }
       }
