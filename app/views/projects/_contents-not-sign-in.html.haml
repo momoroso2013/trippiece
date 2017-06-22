@@ -6,7 +6,9 @@
     .contents-not-sign-in__main-content__sub-title どこにもない旅を、みんなでつくる。<br />trippiece <トリッピース>
     .contents-not-sign-in__main-content__login
       .contents-not-sign-in__main-content__login--facebook Facebookで新規登録/ログイン
-      .contents-not-sign-in__main-content__login--email= link_to 'メールアドレスで新規登録', new_user_registration_path
+      .contents-not-sign-in__main-content__login--email
+        = link_to 'メールアドレスで新規登録', new_user_registration_path
       .contents-not-sign-in__main-content__login--google google+ で新規登録/ログイン
-      .already-registrated= link_to "登録済みの方はこちらから。", new_user_session_path
+      .contents-not-sign-in__main-content__login__already_registrated
+        = link_to "登録済みの方はこちらから。(成果物確認はこちらから)", new_user_session_path
 
