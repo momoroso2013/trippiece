@@ -62,10 +62,10 @@
         padding: 8px;
         border-top: $default-border;
         &--icon {
-        background-color: $sub-font-color;
-        height: 90px;
-        width: 90px;
-        float: left;
+          background-color: $sub-font-color;
+          height: 90px;
+          width: 90px;
+          float: left;
 
           i.fa.fa-user{
             color: white;
@@ -156,15 +156,15 @@
       &__status {
         text-align: center;
         &--title {
-        margin: 8px auto;
-        color: $sub-font-color;
+          margin: 8px auto;
+          color: $sub-font-color;
 
         }
 
         &--status {
-        margin: 8px auto;
-        font-size: 34px;
-        color: #FF8000;
+          margin: 8px auto;
+          font-size: 34px;
+          color: #FF8000;
         }
       }
 
@@ -172,6 +172,11 @@
         @include right-template();
         color: $sub-back-ground;
         background-color: #FE2E64;
+
+        &--published {
+          color: $sub-back-ground;
+          background-color: $sub-font-color;
+        }
       }
 
       &__like {

@@ -25,7 +25,10 @@
       .contents__show__right__button
         -if current_user.id == @user.id
           = link_to "企画を編集", edit_project_path
-        -else
+        -elsif @project.published?
+          .contents__show__right__button--published
+            申し込む
+        -else @project.accepting?
           = link_to "申し込む",  new_project_participant_path(@project)
       .contents__show__right__like
         お気に入り
