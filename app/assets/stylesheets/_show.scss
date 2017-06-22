@@ -183,7 +183,9 @@
         @include right-template();
         color: $sub-back-ground;
         background-color: #FE2E64;
-
+          a, a:visited {
+            color : $sub-back-ground;
+          }
         &--published {
           color: $sub-back-ground;
           background-color: $sub-font-color;

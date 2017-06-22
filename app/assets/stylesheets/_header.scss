@@ -1,4 +1,3 @@
-
 .header {
   background-color: #F3E2A9;
   height: 60px;
@@ -36,22 +35,24 @@
     &__nav {
       @include header-template();
       &__mylist{
-      @include header-template();
-      margin-top: 0px;
+        @include header-template();
+        margin-top: 0px;
 
       }
       &__message {
-      @include header-template();
-      margin-top: 0px;
+        @include header-template();
+        margin-top: 0px;
       }
       &__notification {
-      @include header-template();
-      margin-top: 0px;
+        @include header-template();
+        margin-top: 0px;
       }
       &__user {
-      @include header-template();
-      margin-top: 0px;
-
+        @include header-template();
+        margin-top: 0px;
+          a, a:visited {
+            color : blue;
+          }
         #user-info {
           height: 40px;
         }
