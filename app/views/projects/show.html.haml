@@ -2,6 +2,10 @@
 
 .contents
   .contents__show
+    .contents__show__notice
+    -if @participant_user_ids.include?(current_user.id)
+      .contents__show__notice__arleady_accept
+        既に申し込み済みの企画です
     .contents__show__title
       = @project.title
     .contents__show__pv
@@ -25,6 +29,8 @@
       .contents__show__right__button
         -if current_user.id == @user.id
           = link_to "企画を編集", edit_project_path
+        -elsif @participant_user_ids.include?(current_user.id)
+          申し込み済み
         -elsif @project.published?
           .contents__show__right__button--published
             申し込む
