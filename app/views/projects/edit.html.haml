@@ -5,7 +5,7 @@
     .contents__new__create
       %h1 企画を編集する。
       .contents__new__create__form
-        = form_for @project do |f|
+        = form_for @project ,html: { method: :patch } do |f|
           .contents__new__create__form__field
             .contents__new__create__form__field--right
               = f.label      :title,        "タイトル", class: "title"
@@ -45,7 +45,8 @@
             .contents__new__create__form__field--submit
               = f.select :status, Project.localed_statuses, {}, class: 'form-control'
               = f.submit "編集を保存", class: "submit"
-              = form_for @project, html: { method: :delete } do |f|
-                = f.submit "企画を削除", class: "submit_delete"
+      .contents__new__create__form
+        = form_for @project, html: { method: :delete } do |f|
+          = f.submit "企画を削除", class: "submit_delete"
 = render partial: "footer"
 
