@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :participants
   end
   resources :users
+  resources :likes
 end

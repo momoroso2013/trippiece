@@ -37,7 +37,14 @@
         -else @project.accepting?
           = link_to "申し込む",  new_project_participant_path(@project)
       .contents__show__right__like
-        お気に入り
+        -if @like.nil?
+          = link_to likes_path(project_id: @project), method: :create do
+            .contents__show__right__like--like
+              %i.fa.fa-star-o お気に入り
+        -else
+          = link_to like_path(@like, project_id: @project), method: :delete do
+            .contents__show__right__like--remove
+              %i.fa.fa-star お気に入り
     .contents__show__top
       .contents__show__top__image
       - if @project.image?
