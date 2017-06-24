@@ -159,7 +159,7 @@
     &__right {
       float: right;
       background-color: $sub-back-ground;
-      height: 230px;
+      // height: 230px;
       width: 300px;
       padding-top: 10px;
       border: $default-border;
@@ -194,8 +194,16 @@
 
       &__like {
         @include right-template();
+
+        &--like {
         background-color: $sub-back-ground;
         color: $sub-font-color;
+        }
+
+        &--remove {
+          color: black;
+          background-color: #FFF200;
+        }
       }
     }
   }
