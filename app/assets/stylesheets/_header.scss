@@ -1,11 +1,12 @@
 .header {
   background-color: #F3E2A9;
   height: 60px;
+  min-width: 1300px;
   width: 100%;
   color: blue;
   &__var {
     &__logo {
-      margin: 0 150px 0 40px;
+      margin: 0 90px 0 40px;
       height: 55px;
       width: 200px;
       background-image: url(https://trippiece-dev.s3.amazonaws.com/static/img/pc/logo_big.514ceeae.png);
@@ -17,16 +18,20 @@
       @include header-template();
 
       &__search {
+        width: 100%;
         background-color: white;
         border: $default-border;
         height: 30px;
 
         i {
+          width: 10%;
           color: $sub-font-color;
-          margin-left: 3px;
+          margin-left: 3%;
         }
 
         input {
+        width: 80%;
+
           outline: none;
           border: white;
         }
