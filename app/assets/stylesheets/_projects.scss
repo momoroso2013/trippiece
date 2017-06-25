@@ -128,7 +128,7 @@
       overflow: scroll;
       position: relative;
       &__trip {
-        height: 300px;
+        height: 310px;
         width: 330px;
         border: $default-border;
         float: left;
@@ -164,10 +164,10 @@
         &__bottom {
           clear: both;
           background-color: $sub-back-ground;
-          height: calc(300px - 190px);
+          height: calc(310px - 190px);
           border: $default-border;
           &__user-image {
-            height: 70px;
+            height: 60%;
             width: 70px;
             float: left;
 
@@ -186,28 +186,36 @@
 
           &__project-name {
             color: $main-font-color;
-            float: left;
-            width: 70%;
-            // font-size: 29px;
-          }
-          &__project-date {
-            clear: both;
-            // float: left;
-            color: $sub-font-color;
+            height: 35%;
+            width: 100%;
           }
           &__project-member {
-            float: left;
+            height: 20%;
             color: $main-font-color;
-
           }
 
           &__project-pv {
-            float: left;
-            font-size: 80%;
+            height: 15%;
+            color: $sub-font-color;
+          }
+          &__project-date {
+            height: 24%;
+            clear: both;
             color: $sub-font-color;
           }
           &__project-status-color {
+            height: 6%;
+            border-radius: 3px 3px 0 0;
 
+            &--published-color {
+              height: 100%;
+              background-color: #01DF01;
+            }
+
+            &--accepting-color {
+              height: 100%;
+              background-color: #FE9A2E;
+            }
           }
         }
       }
