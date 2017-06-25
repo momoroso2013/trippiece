@@ -25,7 +25,6 @@
         = project.participants.count
         人
       .contents__main__projects__trip__bottom__project-pv
-        %br
         この企画を見た人数
         = project.impressionist_count(filter: :session_hash)
         人
@@ -34,3 +33,7 @@
         から
         = project.end_at
       .contents__main__projects__trip__bottom__project-status-color
+        - if project.published?
+          .contents__main__projects__trip__bottom__project-status-color--published-color
+        - else project.accepting?
+          .contents__main__projects__trip__bottom__project-status-color--accepting-color
