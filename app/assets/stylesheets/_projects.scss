@@ -3,25 +3,30 @@
   &__pickup {
 
     &__slide {
+
+      .slider img {
+        width: 100%;
+      }
     }
     &__sub {
-      padding: 0 40px;
       background-color: #CEF6D8;
       height: 80px;
       padding: $default-side-space;
       border-bottom: $default-border;
 
       ul {
+        width: 100%;
         color: blue;
         font-size: 30px;
         font-weight: bold;
         margin-left: 150px;
         li {
           float: left;
+          width: 15%;
 
           img {
             height: 80px;
-            width: 150px;
+            width: 100%;
           }
         }
       }
