@@ -204,7 +204,7 @@ ja:
     pm: 午後
   project:
     status:
-        deleted: '削除候補'
+        deleted: '中止'
         draft: '下書き'
         published: '申込受付前'
         accepting: '申込受付中'
