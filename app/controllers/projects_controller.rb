@@ -23,8 +23,8 @@ class ProjectsController < ApplicationController
 
   def show
     @participant_user_ids = @project.participants.pluck(:user_id)
-    @user = @project.user
-    @like = Like.where(project_id: @project.id, user_id: current_user.id).first
+    @project_user = @project.user
+    @like = Like.where(project_id: @project_user.id, user_id: current_user.id).first
   end
 
   def edit
