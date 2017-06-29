@@ -1,0 +1,8 @@
+-if @like.nil?
+  = link_to likes_path(project_id: @project), method: :post, remote: true do
+    .contents__show__right__like--like
+      %i.fa.fa-star-o お気に入り
+-else
+  = link_to like_path(@like, project_id: @project), method: :delete, remote: true do
+    .contents__show__right__like--remove
+      %i.fa.fa-star お気に入り
