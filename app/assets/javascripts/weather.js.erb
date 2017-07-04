@@ -1,0 +1,26 @@
+const API_KEY = "<%= ENV['WEATHER_API']  %>";
+
+$(function() {
+  $("#weather-form").on("submit", function(e) {
+    var cityName = $(this).find("#weather-form-city").val();
+    $.ajax("http://api.openweathermap.org/data/2.5/weather?APPID=" + API_KEY + "&q=" + cityName)
+      .done(function(data) {
+          $("#weather-city-name").text(data.name + "の天気")
+          $("#weather-result").text(data.weather[0].main)
+          $("#weather-icon").attr("src", 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png');
+          $("#local-weather").fadeIn(800);
+          $("#local-weather").on("click", function() {
+            $("#local-weather").fadeOut(800);
+            $("#weather-form-city").val("")
+          });
+      })
+      .fail(function() {
+        if (cityName !== "" ) {
+        alert(cityName + "という地名は存在しません");
+        } else {
+        alert("天気を知りたい都市名をアルファベットで入れてください\n該当する天気情報がなければ、そこに近い場所の天気が表示されます");
+        }
+      })
+    e.preventDefault();
+  });
+});
